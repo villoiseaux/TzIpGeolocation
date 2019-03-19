@@ -53,7 +53,7 @@ int TimeZoneIpGeolocation::request(){
   }  else {
     Serial.println("Connected to server!");
     // Make a HTTP request:
-    _pClient->println("GET /timezone?apiKey=82bb9fc2dabf40358322d7fe1b3e9eeb&lang=fr HTTP/1.0");
+    _pClient->println(String("GET /timezone?apiKey="+API_KEY+"&lang=fr HTTP/1.0"));
     _pClient->println("Host: api.ipgeolocation.io");
     _pClient->println("Connection: close");
     _pClient->println();
