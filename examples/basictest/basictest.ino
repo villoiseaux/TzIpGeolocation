@@ -3,14 +3,18 @@
 #include <ArduinoJson.h>
 #include "TzIpGeolocation.h"
 
-TimeZoneIpGeolocation timeZone("82bb9fc2dabf40358322d7fe1b3e9eeb");
+#define MY_KEY "MY KEY to be generated on ipgeolocation.io"
+#define SSID "MY WIFI NETWORK"
+#define PASSWORD "MY PASSWORD"
+
+TimeZoneIpGeolocation timeZone(MY_KEY);
 
 
 void setup() {
   Serial.begin(115200);
 
   Serial.print("Attempting to connect to SSID: ");
-  WiFi.begin("DOMO", "domo1234");
+  WiFi.begin(SSID, PASSWORD);
 
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
